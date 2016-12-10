@@ -16,6 +16,7 @@ public class AppInventorCodeAnalyzer {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println("Olá, começando a implementação do meu TCC!");
     }
     
 }
