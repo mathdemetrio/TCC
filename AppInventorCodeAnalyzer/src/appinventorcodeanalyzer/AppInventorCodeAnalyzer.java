@@ -7,7 +7,7 @@ package appinventorcodeanalyzer;
 
 /**
  *
- * @author mathe
+ * @author Matheus Demetrio
  */
 public class AppInventorCodeAnalyzer {
 
