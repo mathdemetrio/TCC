@@ -4,12 +4,12 @@
  *and open the template in the editor.
  */
 
-package appinventorcodeanalyzer;
+package appinventorgrader.conceitos;
 
 /**
  *
  * @author Matheus Demetrio <matheus.fdemetrio@gmail.com>
  */
-public class EstatisticasCodigo {
-int qtdFor, qtdIf, qtdIfElse, qtdScript, qtdSprite, qtdOpecacoesLogicas;
+public class Abstracao {
+
 }

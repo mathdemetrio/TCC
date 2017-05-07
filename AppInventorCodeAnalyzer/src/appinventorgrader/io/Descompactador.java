@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io;
+package appinventorgrader.io;
 
 /**
  *
@@ -16,13 +16,17 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class Descompactador {
 
-    private static void unZip(String zipFilePath, String destDir) {
+    public static List<String> unZip(String zipFilePath, String destDir) {
+        List<String> listaBky = new ArrayList<>();
         File dir = new File(destDir);
+
         // create output directory if it doesn't exist
         if (!dir.exists()) {
             dir.mkdirs();
@@ -36,16 +40,29 @@ public class Descompactador {
             ZipEntry ze = zis.getNextEntry();
             while (ze != null) {
                 String fileName = ze.getName();
-                File newFile = new File(destDir + File.separator + fileName);
-                System.out.println("Unzipping to " + newFile.getAbsolutePath());
-                //create directories for sub directories in zip
-                new File(newFile.getParent()).mkdirs();
-                FileOutputStream fos = new FileOutputStream(newFile);
-                int len;
-                while ((len = zis.read(buffer)) > 0) {
-                    fos.write(buffer, 0, len);
+                String ext = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+                
+                //just extract .bky files
+                if (ext.equalsIgnoreCase(".bky")) {
+
+                    String nameBky = fileName.substring(fileName.lastIndexOf("/"), fileName.length());
+
+                    File newFile = new File(destDir + File.separator + nameBky);
+                    listaBky.add(newFile.getPath());
+                    System.out.println("Unzipping to " + newFile.getAbsolutePath());
+                    
+                    //create directories for sub directories in zip
+                    //new File(newFile.getParent()).mkdirs();
+                    
+                    FileOutputStream fos = new FileOutputStream(newFile);
+                    int len;
+                    while ((len = zis.read(buffer)) > 0) {
+                        fos.write(buffer, 0, len);
+                    }
+                    fos.close();
+
                 }
-                fos.close();
+
                 //close this ZipEntry
                 zis.closeEntry();
                 ze = zis.getNextEntry();
@@ -58,6 +75,7 @@ public class Descompactador {
             e.printStackTrace();
         }
 
+        return listaBky;
     }
 
 }

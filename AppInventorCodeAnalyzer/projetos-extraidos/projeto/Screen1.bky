@@ -1,0 +1,58 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_if" id="19" inline="false" x="83" y="10"></block>
+  <block type="global_declaration" id="165" inline="false" x="228" y="18">
+    <field name="NAME">name</field>
+  </block>
+  <block type="procedures_defnoreturn" id="174" x="516" y="15">
+    <mutation></mutation>
+    <field name="NAME">procedure</field>
+  </block>
+  <block type="controls_forRange" id="226" inline="false" x="715" y="9">
+    <field name="VAR">number</field>
+    <value name="START">
+      <block type="math_number" id="227">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <value name="END">
+      <block type="math_number" id="228">
+        <field name="NUM">5</field>
+      </block>
+    </value>
+    <value name="STEP">
+      <block type="math_number" id="229">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+  </block>
+  <block type="local_declaration_statement" id="171" inline="false" x="222" y="76">
+    <mutation>
+      <localname name="name"></localname>
+    </mutation>
+    <field name="VAR0">name</field>
+  </block>
+  <block type="controls_choose" id="53" inline="false" x="84" y="112"></block>
+  <block type="procedures_defreturn" id="178" inline="false" x="510" y="116">
+    <mutation></mutation>
+    <field name="NAME">procedure2</field>
+  </block>
+  <block type="logic_or" id="292" inline="true" x="232" y="176">
+    <field name="OP">OR</field>
+  </block>
+  <block type="controls_forEach" id="248" inline="false" x="735" y="159">
+    <field name="VAR">item</field>
+  </block>
+  <block type="component_event" id="412" x="6" y="219">
+    <mutation component_type="Button" instance_name="Button1" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button1</field>
+  </block>
+  <block type="procedures_callnoreturn" id="183" x="507" y="212">
+    <mutation name="procedure"></mutation>
+    <field name="PROCNAME">procedure</field>
+  </block>
+  <block type="lists_create_with" id="360" x="216" y="251">
+    <mutation items="0"></mutation>
+  </block>
+  <block type="controls_while" id="267" inline="false" x="734" y="268"></block>
+  <yacodeblocks ya-version="159" language-version="20"></yacodeblocks>
+</xml>
